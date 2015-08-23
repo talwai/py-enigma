@@ -1,0 +1,10 @@
+setup.py
+enigma/__init__.py
+enigma/client.py
+py_enigma.egg-info/PKG-INFO
+py_enigma.egg-info/SOURCES.txt
+py_enigma.egg-info/dependency_links.txt
+py_enigma.egg-info/entry_points.txt
+py_enigma.egg-info/requires.txt
+py_enigma.egg-info/top_level.txt
+test/test_client.py

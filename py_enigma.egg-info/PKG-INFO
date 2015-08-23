@@ -1,0 +1,23 @@
+Metadata-Version: 1.1
+Name: py-enigma
+Version: 0.1.0
+Summary: Py-enigma is a Python Client for the Enigma V2 API
+Home-page: https://github.com/talwai/py-enigma
+Author: Aaditya Talwai
+Author-email: aaditya.21@gmail.com
+License: MIT
+Description: Py-enigma is a Python Client for the enigma.io V2 API
+        
+Keywords: enigma enigma.io python client
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: API Clients
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.2
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4

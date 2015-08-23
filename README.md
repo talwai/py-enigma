@@ -14,7 +14,7 @@ The `py-enigma` client support Python 2.7+ and Python 3.3+. The client may not b
 ```
 >>> import enigma
 >>> enigma.__version__
-0.1
+'0.1.0'
 ```
 
 #### How-tos

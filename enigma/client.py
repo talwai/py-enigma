@@ -26,9 +26,17 @@ class Operations(object):
 class Client(object):
     VERSION = 'v2'
 
+    class Metadata(object): pass
+    class Stats(object): pass
+    class Data(object): pass
+
     def __init__(self, api_key):
         self.api_key = api_key
         self._current_query = None
+
+        setattr(self.Metadata, 'query', self._metadata_query)
+        setattr(self.Stats, 'query', self._stats_query)
+        setattr(self.Data, 'query', self._data_query)
 
     def format_request(self, version, endpoint, datapath, params):
         return 'https://api.enigma.io/{0}/{1}/{2}/{3}/{4}'\
@@ -51,19 +59,19 @@ class Client(object):
         resp.raise_for_status()
         return resp.json()
 
-    def metadata_query(self, datapath, params):
+    def _metadata_query(self, datapath, params):
         return EnigmaResource.from_json(
                 self.query(Endpoints.METADATA, datapath, params),
                 self._current_query
         )
 
-    def data_query(self, datapath, params):
+    def _data_query(self, datapath, params):
         return EnigmaResource.from_json(
                 self.query(Endpoints.DATA, datapath, params),
                 self._current_query
         )
 
-    def stats_query(self, datapath, params):
+    def _stats_query(self, datapath, params):
         return EnigmaResource.from_json(
                 self.query(Endpoints.STATS, datapath, params),
                 self._current_query

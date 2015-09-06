@@ -92,7 +92,6 @@ class Client(object):
         export_url = resp['export_url']
 
         resp = self._query_head(head_url)
-        import pdb; pdb.set_trace()
 
 class EnigmaResource(object):
     def __init__(self, info, datapath, result, query):

@@ -30,7 +30,7 @@ client = enigma.Client(ENIGMA_API_KEY)
 >>> params = {"search": "john", "select": ["namefull", "appt_made_date"], "limit": 20}
 >>> result = client.Metadata.query(datapath, params)
 >>> type(result)
-<class 'enigma.Metadata'>
+<class 'enigma.EnigmaResource'>
 >>> result.datapath, result.info, result.result
 ```
 
@@ -40,7 +40,7 @@ client = enigma.Client(ENIGMA_API_KEY)
 >>> params = {"search": "john", "select": ["namefull", "appt_made_date"], "limit": 20}
 >>> result = client.Data.query(datapath, params)
 >>> type(result)
-<class 'enigma.Data'>
+<class 'enigma.EnigmaResource'>
 >>> result.datapath, result.info, result.result
 ```
 
@@ -50,7 +50,7 @@ client = enigma.Client(ENIGMA_API_KEY)
 >>> params = {"search": "john", "select": ["namefull", "appt_made_date"], "limit": 20}
 >>> result = client.Stats.query(datapath, params)
 >>> type(result)
-<class 'enigma.Stats'>
+<class 'enigma.EnigmaResource'>
 >>> result.datapath, result.info, result.result
 ```
 

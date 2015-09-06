@@ -1,5 +1,5 @@
 """
-Setup module for py-enigma
+Setup module for enigma-io
 """
 
 # Always prefer setuptools over distutils
@@ -15,13 +15,13 @@ with open(path.join(here, 'DESCRIPTION.rst'), encoding='utf-8') as f:
     long_description = f.read()
 
 setup(
-    name='py-enigma',
+    name='enigma-io',
 
     # Versions should comply with PEP440.  For a discussion on single-sourcing
     # the version across setup.py and the project code, see
     # https://packaging.python.org/en/latest/single_source_version.html
     version='0.1.0',
-    description='Py-enigma is a Python Client for the Enigma V2 API',
+    description='enigma-io is a Python Client for the Enigma V2 API',
     long_description=long_description,
 
     # The project's main homepage.
@@ -44,7 +44,7 @@ setup(
 
         # Indicate who your project is intended for
         'Intended Audience :: Developers',
-        'Topic :: Software Development :: API Clients',
+        'Topic :: Software Development',
 
         # Pick your license as you wish (should match "license" above)
         'License :: OSI Approved :: MIT License',

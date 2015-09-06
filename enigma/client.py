@@ -23,12 +23,15 @@ class Operations(object):
     MIN = "min"
     FREQUENCY = "frequency"
 
+class UnsupportedMethod(Exception): pass
+
 class Client(object):
     VERSION = 'v2'
 
     class Metadata(object): pass
     class Stats(object): pass
     class Data(object): pass
+    class ExportRequest(object): pass
 
     def __init__(self, api_key):
         self.api_key = api_key
@@ -37,6 +40,7 @@ class Client(object):
         setattr(self.Metadata, 'query', self._metadata_query)
         setattr(self.Stats, 'query', self._stats_query)
         setattr(self.Data, 'query', self._data_query)
+        setattr(self.ExportRequest, 'new', self._export_request)
 
     def format_request(self, version, endpoint, datapath, params):
         return 'https://api.enigma.io/{0}/{1}/{2}/{3}/{4}'\
@@ -59,6 +63,11 @@ class Client(object):
         resp.raise_for_status()
         return resp.json()
 
+    def _query_head(self, endpoint):
+            resp = requests.get(endpoint)
+            #self._current_query = req
+            return resp
+
     def _metadata_query(self, datapath, params):
         return EnigmaResource.from_json(
                 self.query(Endpoints.METADATA, datapath, params),
@@ -76,6 +85,14 @@ class Client(object):
                 self.query(Endpoints.STATS, datapath, params),
                 self._current_query
         )
+
+    def _export_request(self, datapath, params):
+        resp = self.query(Endpoints.EXPORT, datapath, params)
+        head_url = resp['head_url']
+        export_url = resp['export_url']
+
+        resp = self._query_head(head_url)
+        import pdb; pdb.set_trace()
 
 class EnigmaResource(object):
     def __init__(self, info, datapath, result, query):
